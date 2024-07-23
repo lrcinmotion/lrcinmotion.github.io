@@ -14,3 +14,6 @@ img {
   margin: auto;
   display: block;
 }
+.navbar {
+  word-spacing: 15px;
+}
