@@ -34,3 +34,9 @@ img {
   flex: 50%;
   padding: 5px;
 }
+
+.banner {
+  width:240px; 
+	height:100%;
+  background-color: #207068;
+}
