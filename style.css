@@ -21,8 +21,8 @@ img {
   word-spacing: 15px;
   position: absolute;
   left: 50%;
-  /*margin: auto;*/
-  width: 50%;
+  margin: auto;
+ 
   margin-top: 24;
 }
 .instagram {
