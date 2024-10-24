@@ -19,10 +19,7 @@ img {
 }
 .navbar {
   word-spacing: 15px;
-  position: absolute;
-  left: 50%;
   margin: auto;
- 
   margin-top: 24;
 }
 .instagram {
