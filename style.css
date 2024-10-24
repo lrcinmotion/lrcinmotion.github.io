@@ -20,6 +20,8 @@ img {
 .navbar {
   word-spacing: 15px;
   margin: auto;
+  width: 50%;
+  text-align: center;
   margin-top: 24;
 }
 .intro {
