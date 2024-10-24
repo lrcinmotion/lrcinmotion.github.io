@@ -19,7 +19,9 @@ img {
 }
 .navbar {
   word-spacing: 15px;
-  margin: auto;
+  position: absolute;
+  left: 50%;
+  /*margin: auto;*/
   width: 50%;
   margin-top: 24;
 }
