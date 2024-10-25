@@ -22,6 +22,7 @@ img {
 }
 .email {
   margin: auto;
+  width: 50%;
 }
 .navbar {
   word-spacing: 10px;
