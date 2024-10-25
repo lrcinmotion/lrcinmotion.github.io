@@ -17,6 +17,9 @@ img {
   margin: auto;
   display: block;
 }
+.email {
+  margin: auto;
+}
 .navbar {
   word-spacing: 10px;
   margin: auto;
