@@ -21,9 +21,9 @@ img {
   display: block;
 }
 .email {
-    margin: 40%;
-    text-align: center;
     font-size: 19px;
+    position: absolute;
+    margin-left: 25%;
 }
 .navbar {
   word-spacing: 4px;
