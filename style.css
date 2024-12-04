@@ -23,7 +23,8 @@ img {
 .email {
     font-size: 19px;
     position: absolute;
-    margin-left: 25%;
+    margin-left: 50%;
+    left: -60;
 }
 .navbar {
   word-spacing: 4px;
