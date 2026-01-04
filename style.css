@@ -512,6 +512,7 @@ p {
   padding: 2rem;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .feature-content h3 {
