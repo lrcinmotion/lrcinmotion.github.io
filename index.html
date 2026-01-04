@@ -1,67 +1,143 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-<title>LRC in Motion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <title>LRC in Motion - Movement & Wellness</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
 
 <body>
+  <!-- Energy particles -->
+  <div class="energy-particle particle-1"></div>
+  <div class="energy-particle particle-2"></div>
+  <div class="energy-particle particle-3"></div>
+  <div class="energy-particle particle-4"></div>
+  <div class="energy-particle particle-5"></div>
 
+  <!-- Banner -->
   <div class="banner">
-    <img src="logo.jpg" height="240px" class="logo">
+    <div class="css-logo">
+      <div class="logo-circle">
+        <div class="logo-text-main">LRC</div>
+        <div class="logo-flow-line"></div>
+        <div class="logo-text-sub">in motion</div>
+      </div>
+    </div>
   </div>
 
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="event-calendar.html">Event Calendar</a>
+  </nav>
 
-  <div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="event-calendar.html">Event Calendar</a>
-  </div> 
-  
-   <div class="into"> 
-   
-     <p>LRC_in_motion is an
-     initiative that thrives on creating positive
-impacts, fostering connections and uniting people through the transformative power of movement.
-       </p> 
-       
-     <h3>MISSION  </h3>
-<p> Drawing on the many facets of holistic movement the aim is to build connection, to create, to include and inspire an overall sense of wellbeing and fulfillment.
-  </p>   
+  <!-- Hero Section -->
+  <section class="hero container fade-in">
+    <div class="hero-content">
+      <h1>LRC in Motion</h1>
+      <p>
+        An initiative that thrives on creating positive impacts, fostering connections
+        and uniting people through the transformative power of movement.
+      </p>
 
- 
-  </div> 
+      <div class="bamboo-accent"></div>
 
-  <br><br><br>
+      <h3>MISSION</h3>
+      <p>
+        Drawing on the many facets of holistic movement, the aim is to build connection,
+        to create, to include and inspire an overall sense of wellbeing and fulfillment.
+      </p>
+    </div>
+  </section>
 
-    <a href="qigong.html" >
-    <h3>
-      Qigong
-    </h3>
-    <img src="Lisa Qigong 2.jpg" height="300">
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
+
+  <!-- Feature Cards -->
+  <div class="container">
+    <div class="feature-grid fade-in">
+      <!-- Qigong Card -->
+      <a href="qigong.html" class="feature-card">
+        <img src="Lisa Qigong 2.jpg" alt="Qigong Practice" class="feature-image">
+        <div class="feature-content">
+          <h3>Qigong</h3>
+          <p>
+            Ancient Chinese practice integrating movement, meditation, and breath
+            to cultivate energy and wellness.
+          </p>
+        </div>
       </a>
 
-  <br><br><br>
-  
-    <a href="dance.html">
-     <h3>
-     Dance
-     </h3>
-    <img src="me.jpeg" alt="mejump" height="300">
-   </a>
+      <!-- Dance Card -->
+      <a href="dance.html" class="feature-card">
+        <img src="me.jpeg" alt="Dance Movement" class="feature-image">
+        <div class="feature-content">
+          <h3>Dance</h3>
+          <p>
+            Expressive movement that connects body, mind, and spirit through
+            rhythm and creative flow.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
 
-       <br> <br> <br> 
-  
-     <a href="https://mailchi.mp/bd8a5e81c289/lrc-in-motion-mailing-list" target="_blank" class="email">
-     <b>join e-mail list</b></a>
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
 
-      <br> <br> <br> 
-  
+  <!-- Call to Action -->
+  <section class="cta container fade-in">
+    <div class="bamboo-accent"></div>
+    <h2>Join Our Community</h2>
+    <p>Stay connected with upcoming classes, workshops, and wellness events.</p>
+    <a href="https://mailchi.mp/bd8a5e81c289/lrc-in-motion-mailing-list" target="_blank" class="email">
+      Join E-mail List
+    </a>
+    <div class="bamboo-accent"></div>
+  </section>
+
+  <!-- Breathing Space -->
+  <div class="meditation-space">
+    <div class="breath-circle"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Intersection Observer for fade-in effects
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add initial fade-in class
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in').forEach((el, index) => {
+        setTimeout(() => {
+          el.style.transitionDelay = `${index * 0.2}s`;
+        }, 100);
+      });
+    }, 100);
+  </script>
+
 </body>
-
-
 </html>

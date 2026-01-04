@@ -1,64 +1,143 @@
-
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <title>LRC in Motion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <title>Qigong - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
 
 <body>
+  <!-- Energy particles -->
+  <div class="energy-particle particle-1"></div>
+  <div class="energy-particle particle-2"></div>
+  <div class="energy-particle particle-3"></div>
+  <div class="energy-particle particle-4"></div>
+  <div class="energy-particle particle-5"></div>
+
+  <!-- Banner -->
   <div class="banner">
-    <img src="logo.jpg" height="240px" class="logo">
+    <div class="css-logo">
+      <div class="logo-circle">
+        <div class="logo-text-main">LRC</div>
+        <div class="logo-flow-line"></div>
+        <div class="logo-text-sub">in motion</div>
+      </div>
+    </div>
   </div>
-  
-  <div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="event-calendar.html">Event Calendar</a>
-  </div> 
 
- 
-<p>
- <b> Qigong </b>
-is an ancient Chinese healthcare system. A mind-body practice
-that integrates methods of movement, muscle relaxation, meditation, and respiratory exercise to improve physical and emotional health.
-</p>
-  
-  <h2>
- <b>Benefits of Qigong </b>
- ☯️</h2>
-  
-  <p>
-- Increases vitality and enhances longevity 
-  <br>
-      <br>
-- Balances and strengthens the body
-   <br>
-      <br>
-- Decreases anxiety
-  <br>
-      <br>
-- Strengthens the immune system
-    <br>
-   <br>
-- Regulates the nervous system
-   <br>
-      <br>
-- Improves bone density
-  <br>
-      <br>
-  - reduces stress
-   <br>
-      <br>
-- Regulates blood pressure  
-</p>
-  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="event-calendar.html">Event Calendar</a>
+  </nav>
+
+  <!-- Breathing meditation -->
+  <div class="meditation-space fade-in">
+    <div class="breath-circle"></div>
+  </div>
+
+  <!-- About Qigong -->
+  <section class="hero container fade-in">
+    <div class="hero-content">
+      <h1>Qigong</h1>
+      <p>
+        <strong>Qigong</strong> is an ancient Chinese healthcare system. A mind-body practice
+        that integrates methods of movement, muscle relaxation, meditation, and respiratory
+        exercise to improve physical and emotional health.
+      </p>
+    </div>
+  </section>
+
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
+
+  <!-- Benefits Section -->
+  <section class="container fade-in">
+    <h2>Benefits of Qigong ☯️</h2>
+
+    <div class="benefits-container">
+      <div class="benefit-item">
+        Increases vitality and enhances longevity
+      </div>
+      <div class="benefit-item">
+        Balances and strengthens the body
+      </div>
+      <div class="benefit-item">
+        Decreases anxiety
+      </div>
+      <div class="benefit-item">
+        Strengthens the immune system
+      </div>
+      <div class="benefit-item">
+        Regulates the nervous system
+      </div>
+      <div class="benefit-item">
+        Improves bone density
+      </div>
+      <div class="benefit-item">
+        Reduces stress
+      </div>
+      <div class="benefit-item">
+        Regulates blood pressure
+      </div>
+    </div>
+  </section>
+
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
+
+  <!-- Closing breathing space -->
+  <div class="meditation-space fade-in">
+    <div class="bamboo-accent"></div>
+    <h3>Find Your Flow</h3>
+    <p style="text-align: center;">Experience the transformative power of qi energy</p>
+    <div class="breath-circle"></div>
+  </div>
+
+  <!-- Call to Action -->
+  <section class="cta container fade-in">
+    <a href="event-calendar.html" class="email">
+      View Class Schedule
+    </a>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Intersection Observer for fade-in effects
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add staggered delays
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in').forEach((el, index) => {
+        setTimeout(() => {
+          el.style.transitionDelay = `${index * 0.2}s`;
+        }, 100);
+      });
+    }, 100);
+  </script>
+
 </body>
-
-
 </html>
