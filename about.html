@@ -1,35 +1,122 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <title>LRC in Motion</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <title>About Lisa - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
 
-  <body>
-      <div class="banner">
-    <img src="logo.jpg" height="240px" class="logo">
-  </div>
-    
-<div class="navbar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="event-calendar.html">Event Calendar</a>
-  </div>
-    
- <br>
-  <br>
-  
-    <h3>Lisa Raquel Cowan</h3>
-   <p>Based in Maleny QLD, Lisa specialises in somatic body practices, merging different movement modalities and offering short courses in holistic and dynamic movement. With a B.A. in Dance and extensive teaching experience, she guides individuals to explore their body’s innate intelligence to find inner peace through movement.
-   </p>
-<br>
-    
-  <img src="P1010101.JPG" alt="" width="500" height="600">
+<body>
+  <!-- Energy particles -->
+  <div class="energy-particle particle-1"></div>
+  <div class="energy-particle particle-2"></div>
+  <div class="energy-particle particle-3"></div>
+  <div class="energy-particle particle-4"></div>
+  <div class="energy-particle particle-5"></div>
 
-     </body>
-  
+  <!-- Banner -->
+  <div class="banner">
+    <div class="css-logo">
+      <div class="logo-circle">
+        <div class="logo-text-main">LRC</div>
+        <div class="logo-flow-line"></div>
+        <div class="logo-text-sub">in motion</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="classes.html">Classes</a>
+  </nav>
+
+  <!-- About Header -->
+  <section class="hero container fade-in">
+    <div class="hero-content" style="min-width: 100%;">
+      <h1>About Lisa</h1>
+      <h3 style="margin-top: 1rem; font-size: 1.8rem;">Lisa Raquel Cowan</h3>
+      <p style="margin-top: 1.5rem;">
+        Movement practitioner and teacher based in Maleny, Queensland
+      </p>
+    </div>
+  </section>
+
+  <!-- About Content with Image -->
+  <div class="container fade-in">
+    <div class="about-section">
+      <div class="about-image">
+        <img src="P1010101.JPG" alt="Lisa Raquel Cowan">
+      </div>
+      <div class="about-text">
+        <p>
+          Based in Maleny QLD, Lisa specialises in somatic body practices, merging different
+          movement modalities and offering short courses in holistic and dynamic movement.
+        </p>
+        <p>
+          With a B.A. in Dance and extensive teaching experience, she guides individuals to
+          explore their body's innate intelligence to find inner peace through movement.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
+
+  <!-- Call to Action -->
+  <section class="cta container fade-in">
+    <div class="bamboo-accent"></div>
+    <h2>Start Your Journey</h2>
+    <p>Connect with Lisa to explore transformative movement practices</p>
+    <a href="contact.html" class="email">
+      Get in Touch
+    </a>
+    <div class="bamboo-accent"></div>
+  </section>
+
+  <!-- Breathing Space -->
+  <div class="meditation-space fade-in">
+    <div class="breath-circle"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Intersection Observer for fade-in effects
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add staggered delays
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in').forEach((el, index) => {
+        setTimeout(() => {
+          el.style.transitionDelay = `${index * 0.2}s`;
+        }, 100);
+      });
+    }, 100);
+  </script>
+
+</body>
 </html>
