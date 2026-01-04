@@ -1,66 +1,158 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <title>LRC in Motion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <title>Dance - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
 
 <body>
+  <!-- Energy particles -->
+  <div class="energy-particle particle-1"></div>
+  <div class="energy-particle particle-2"></div>
+  <div class="energy-particle particle-3"></div>
+  <div class="energy-particle particle-4"></div>
+  <div class="energy-particle particle-5"></div>
+
+  <!-- Banner -->
   <div class="banner">
-    <img src="logo.jpg" height="240px" class="logo">
+    <div class="css-logo">
+      <div class="logo-circle">
+        <div class="logo-text-main">LRC</div>
+        <div class="logo-flow-line"></div>
+        <div class="logo-text-sub">in motion</div>
+      </div>
+    </div>
   </div>
-  
-  <div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="event-calendar.html">Event Calendar</a>
-  </div> 
-<br>
-  
-  <h2><b>Dance fitness programs
-   <b/></h2>
 
-<p>
-All levels. From high intensity to lower impact sessions, there is a class
-for everyone!
-  <br>
-  <br>
- Lisa’s programs are not JUST about physically getting fit;
-they are ALSO about connecting, socialising and boosting confidence.
-  
-</p>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="classes.html">Classes</a>
+  </nav>
 
-  <br>
-  <br>
-  <br>
-  
-   <a href="bounce_n_drop.html">
-     <h3>
-    <b>BOUNCE N DROP</b> High Impact Dance Fitness
-     </h3>
-    <img src="bounce_n_drop.jpg" alt="bounce_n_drop" height="500">
-   </a>
+  <!-- Dance Header -->
+  <section class="hero container fade-in">
+    <div class="hero-content">
+      <h1>Dance</h1>
+      <p>
+        Expressive movement that connects body, mind, and spirit through rhythm and creative flow.
+      </p>
+    </div>
+  </section>
 
-   <a href="elevate.html">
-     <h3>
-   <b>ELEVATE</b> Seated Dance Program
-     </h3>
-    <img src="elevate.jpg" alt="elevate" height="300">
-   </a>
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
 
-   <a href="community_dance.html">
-     <h3>
-  <b>COMMUNITY DANCE</b> Participatory Dance and Movement Practices
-     </h3>
-    <img src="community_dance.jpg" alt="community_dance" height="300">
-   </a>
-  
+  <!-- Dance Programs Info -->
+  <div class="container fade-in">
+    <div class="benefits-container">
+      <h2>Dance Fitness Programs</h2>
+
+      <p style="text-align: center; max-width: 800px; margin: 2rem auto;">
+        All levels. From high intensity to lower impact sessions, there is a class for everyone!
+      </p>
+
+      <p style="text-align: center; max-width: 800px; margin: 2rem auto;">
+        Lisa's programs are not JUST about physically getting fit; they are ALSO about
+        connecting, socialising and boosting confidence.
+      </p>
+    </div>
+  </div>
+
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
+
+  <!-- Dance Programs Grid -->
+  <div class="container">
+    <div class="feature-grid fade-in">
+
+      <!-- Bounce N Drop -->
+      <a href="bounce_n_drop.html" class="feature-card">
+        <img src="bounce_n_drop.jpg" alt="Bounce N Drop" class="feature-image">
+        <div class="feature-content">
+          <h3>Bounce N Drop</h3>
+          <p>High Impact Dance Fitness</p>
+        </div>
+      </a>
+
+      <!-- Elevate -->
+      <a href="elevate.html" class="feature-card">
+        <img src="elevate.jpg" alt="Elevate" class="feature-image">
+        <div class="feature-content">
+          <h3>Elevate</h3>
+          <p>Seated Dance Program</p>
+        </div>
+      </a>
+
+      <!-- Community Dance -->
+      <a href="community_dance.html" class="feature-card">
+        <img src="community_dance.jpg" alt="Community Dance" class="feature-image">
+        <div class="feature-content">
+          <h3>Community Dance</h3>
+          <p>Participatory Dance and Movement Practices</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
+
+  <!-- Call to Action -->
+  <section class="cta container fade-in">
+    <div class="bamboo-accent"></div>
+    <h2>Ready to Move?</h2>
+    <p>Contact Lisa to learn more about dance programs and class schedules</p>
+    <a href="contact.html" class="email">
+      Get in Touch
+    </a>
+    <div class="bamboo-accent"></div>
+  </section>
+
+  <!-- Breathing Space -->
+  <div class="meditation-space fade-in">
+    <div class="breath-circle"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Intersection Observer for fade-in effects
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add staggered delays
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in').forEach((el, index) => {
+        setTimeout(() => {
+          el.style.transitionDelay = `${index * 0.2}s`;
+        }, 100);
+      });
+    }, 100);
+  </script>
+
 </body>
-
-
 </html>
