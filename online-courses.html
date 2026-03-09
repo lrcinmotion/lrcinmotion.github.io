@@ -47,7 +47,73 @@
     </div>
   </section>
 
-  
+    <!-- Online Courses Grid - ADD THIS AFTER THE CTA SECTION -->
+  <div class="courses-header fade-in">
+    <h2>Available Courses</h2>
+    <p>Click on any course to learn more about what's included</p>
+  </div>
+
+  <div class="courses-grid fade-in">
+    <!-- Course Card 1: Stomach & Spleen -->
+    <div class="course-card">
+      <div class="course-preview">
+        <img src="stomach_spleen.jpg" alt="Stomach & Spleen Course" class="course-image">
+        <div class="course-summary">
+          <h3>Stomach & Spleen</h3>
+          <p>Discover the ancient wisdom of digestive health through gentle movement and meridian theory.</p>
+          <button class="expand-btn">Show Details</button>
+        </div>
+      </div>
+      
+      <div class="course-details">
+        <div class="details-content">
+          <h4>Course Details</h4>
+          <p>This comprehensive course covers:</p>
+          <ul>
+            <li>Understanding Stomach & Spleen meridians</li>
+            <li>Gentle movement sequences for digestion</li>
+            <li>Acupressure points for digestive health</li>
+            <li>Dietary recommendations in Chinese Medicine</li>
+            <li>Weekly guided practices (6 weeks)</li>
+          </ul>
+          <p><strong>Duration:</strong> 6 weeks</p>
+          <p><strong>Level:</strong> All levels welcome</p>
+          <p><strong>Includes:</strong> Video library + PDF guides</p>
+          <button class="enroll-btn">Join Waitlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Card 2: Heart & Small Intestine -->
+    <div class="course-card">
+      <div class="course-preview">
+        <img src="heart_small_intestine.jpg" alt="Heart & Small Intestine Course" class="course-image">
+        <div class="course-summary">
+          <h3>Heart & Small Intestine</h3>
+          <p>Nourish your emotional heart and digestive fire with practices for vitality and joy.</p>
+          <button class="expand-btn">Show Details</button>
+        </div>
+      </div>
+      
+      <div class="course-details">
+        <div class="details-content">
+          <h4>Course Details</h4>
+          <p>This heart-centered course includes:</p>
+          <ul>
+            <li>Heart meridian opening sequences</li>
+            <li>Small intestine meridian practices</li>
+            <li>Emotional release techniques</li>
+            <li>Heart-brain coherence exercises</li>
+            <li>Meditation for emotional balance</li>
+          </ul>
+          <p><strong>Duration:</strong> 6 weeks</p>
+          <p><strong>Level:</strong> All levels welcome</p>
+          <p><strong>Includes:</strong> Video library + Guided audios</p>
+          <button class="enroll-btn">Join Waitlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
    <!-- Call to Action -->
   <section class="cta container fade-in">
@@ -107,6 +173,56 @@
         }, 100);
       });
     }, 100);
+    // Add this INSIDE your existing script tag, after the fade-in code
+
+// Course card expand/collapse functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const courseCards = document.querySelectorAll('.course-card');
+  
+  courseCards.forEach(card => {
+    const preview = card.querySelector('.course-preview');
+    const details = card.querySelector('.course-details');
+    const expandBtn = card.querySelector('.expand-btn');
+    
+    preview.addEventListener('click', function(e) {
+      // Don't toggle if clicking on the button itself
+      if (e.target === expandBtn || expandBtn.contains(e.target)) {
+        return;
+      }
+      toggleCourseDetails(card, details, expandBtn);
+    });
+    
+    expandBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent event from bubbling to preview
+      toggleCourseDetails(card, details, expandBtn);
+    });
+  });
+  
+  function toggleCourseDetails(card, details, btn) {
+    // Close all other cards first (optional - remove if you want multiple open)
+    document.querySelectorAll('.course-details').forEach(d => {
+      if (d !== details && d.classList.contains('expanded')) {
+        d.classList.remove('expanded');
+        const otherBtn = d.closest('.course-card').querySelector('.expand-btn');
+        if (otherBtn) {
+          otherBtn.textContent = 'Show Details';
+          otherBtn.classList.remove('expanded');
+        }
+      }
+    });
+    
+    // Toggle this card
+    details.classList.toggle('expanded');
+    
+    if (details.classList.contains('expanded')) {
+      btn.textContent = 'Show Less';
+      btn.classList.add('expanded');
+    } else {
+      btn.textContent = 'Show Details';
+      btn.classList.remove('expanded');
+    }
+  }
+});
   </script>
 
 </body>
