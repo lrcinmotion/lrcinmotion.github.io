@@ -49,17 +49,17 @@
 
     <!-- Online Courses Grid - ADD THIS AFTER THE CTA SECTION -->
   <div class="courses-header fade-in">
-    <h2>Available Courses</h2>
+    <h2>Upcoming Courses</h2>
     <p>Click on any course to learn more about what's included</p>
   </div>
 
   <div class="courses-grid fade-in">
-    <!-- Course Card 1: Stomach & Spleen -->
+    <!-- Course Card 1: Qigong Foundations -->
     <div class="course-card">
       <div class="course-preview">
-        <img src="stomach_spleen.jpg" alt="Stomach & Spleen Course" class="course-image">
+        <img src="pics/qigong_foundations_v3.jpg" alt="Qigong Foundations Course" class="course-image">
         <div class="course-summary">
-          <h3>Stomach & Spleen</h3>
+          <h3>Qigong Foundations</h3>
           <p>Discover the ancient wisdom of digestive health through gentle movement and meridian theory.</p>
           <button class="expand-btn">Show Details</button>
         </div>
@@ -68,15 +68,16 @@
       <div class="course-details">
         <div class="details-content">
           <h4>Course Details</h4>
+          <p>Qigong translates to "cultivation of life energy"—the art and science of working with Qi, the vital force that animates all living things. But for the beginner, this concept can feel abstract or mystical. This course is designed to demystify Qigong by building a solid, experiential foundation.</p>
+          <p>Over four weeks, you will not just learn movements; you will learn how to feel, how to breathe, how to stand, and how to flow. Building a personal practice from the ground up, discovering that Qigong is not about achieving perfect external forms, but about cultivating a felt sense of aliveness, calm, and connection.</p>
           <p>This comprehensive course covers:</p>
           <ul>
-            <li>Understanding Stomach & Spleen meridians</li>
-            <li>Gentle movement sequences for digestion</li>
-            <li>Acupressure points for digestive health</li>
-            <li>Dietary recommendations in Chinese Medicine</li>
-            <li>Weekly guided practices (6 weeks)</li>
+            <li><strong>Week 1:</strong> The Pillar of Structure (Alignment & Relaxation)</li>
+            <li><strong>Week 2:</strong> The Pillar of Breath (The Bridge Between Body & Mind)</li>
+            <li><strong>Week 3:</strong> The Pillar of Awareness (Feeling the Energy)</li>
+            <li><strong>Week 4:</strong> The Pillar of Flow (Integrating All Elements)</li>
           </ul>
-          <p><strong>Duration:</strong> 6 weeks</p>
+          <p><strong>Duration:</strong> 4 weeks</p>
           <p><strong>Level:</strong> All levels welcome</p>
           <p><strong>Includes:</strong> Video library + PDF guides</p>
           <button class="enroll-btn">Join Waitlist</button>
@@ -84,12 +85,12 @@
       </div>
     </div>
 
-    <!-- Course Card 2: Heart & Small Intestine -->
+    <!-- Course Card 2: Stillness in Motion -->
     <div class="course-card">
       <div class="course-preview">
-        <img src="heart_small_intestine.jpg" alt="Heart & Small Intestine Course" class="course-image">
+        <img src="pics/stillness_in_motion.jpg" alt="Stillness in Motion Course" class="course-image">
         <div class="course-summary">
-          <h3>Heart & Small Intestine</h3>
+          <h3>Stillness in Motion</h3>
           <p>Nourish your emotional heart and digestive fire with practices for vitality and joy.</p>
           <button class="expand-btn">Show Details</button>
         </div>
@@ -98,13 +99,13 @@
       <div class="course-details">
         <div class="details-content">
           <h4>Course Details</h4>
-          <p>This heart-centered course includes:</p>
+          <p>This course explores:</p>
           <ul>
-            <li>Heart meridian opening sequences</li>
-            <li>Small intestine meridian practices</li>
-            <li>Emotional release techniques</li>
-            <li>Heart-brain coherence exercises</li>
-            <li>Meditation for emotional balance</li>
+            <li>Finding the still, centered point within movement—like the calm eye of a hurricane</li>
+            <li>Discovering that even in our deepest stillness, life is moving—breath flows, energy circulates, thoughts arise</li>
+            <li>Movement within stillness and stillness within movement as a complementary, paradoxical pair similar to Yin and Yang</li>
+            <li>Understanding that stillness is never truly static—energy flows, thoughts arise, and the body moves internally</li>
+            <li>How movement can contain stillness within, bringing centered thoughts and calm focus</li>
           </ul>
           <p><strong>Duration:</strong> 6 weeks</p>
           <p><strong>Level:</strong> All levels welcome</p>
@@ -133,8 +134,8 @@
   
 
   <!-- Image -->
-  <div class="container fade-in" style="margin: 3rem auto;">
-    <img src="Lisa_Woodford_24-25-45.jpg" alt="Online Course" style="max-width: 600px; width: 100%; height: auto; margin: 0 auto; display: block;">
+  <div class="container fade-in section-image-wrap">
+    <img src="pics/Lisa_Woodford_24-25-45.jpg" alt="Online Course" class="section-image">
   </div>
 
   
@@ -199,10 +200,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   function toggleCourseDetails(card, details, btn) {
-    // Close all other cards first (optional - remove if you want multiple open)
+    // Close all other cards first
     document.querySelectorAll('.course-details').forEach(d => {
       if (d !== details && d.classList.contains('expanded')) {
         d.classList.remove('expanded');
+        d.style.removeProperty('--details-height');
         const otherBtn = d.closest('.course-card').querySelector('.expand-btn');
         if (otherBtn) {
           otherBtn.textContent = 'Show Details';
@@ -210,14 +212,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
-    
+
     // Toggle this card
-    details.classList.toggle('expanded');
-    
-    if (details.classList.contains('expanded')) {
+    if (!details.classList.contains('expanded')) {
+      details.style.setProperty('--details-height', details.scrollHeight + 'px');
+      details.classList.add('expanded');
       btn.textContent = 'Show Less';
       btn.classList.add('expanded');
     } else {
+      details.classList.remove('expanded');
+      details.style.removeProperty('--details-height');
       btn.textContent = 'Show Details';
       btn.classList.remove('expanded');
     }
