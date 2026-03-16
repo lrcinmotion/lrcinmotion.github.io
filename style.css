@@ -416,6 +416,20 @@ p {
   transform: translateY(-3px);
 }
 
+/* Star divider */
+.star-divider {
+  text-align: center;
+  margin: 3rem auto;
+  font-size: 2.4rem;
+  letter-spacing: 1.5rem;
+  color: var(--soft-teal);
+  opacity: 0.5;
+}
+
+.star-divider::before {
+  content: '\2726 \2727 \2726';
+}
+
 /* ===================== */
 /* Hero section          */
 /* ===================== */
