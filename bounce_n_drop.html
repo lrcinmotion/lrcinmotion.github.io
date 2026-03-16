@@ -1,26 +1,193 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bounce N Drop is a high-energy dance fitness class on the Sunshine Coast. Get fit, connect, and boost confidence with Lisa's fun, full-body workout sessions.">
+  <meta property="og:title" content="Bounce N Drop - LRC in Motion">
+  <meta property="og:description" content="Bounce N Drop is a high-energy dance fitness class on the Sunshine Coast. Get fit, connect, and boost confidence with Lisa's fun, full-body workout sessions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrcinmotion.github.io/bounce_n_drop.html">
+  <meta property="og:image" content="https://lrcinmotion.github.io/pics/bounce_n_drop.jpg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <title>LRC in Motion</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <title>Bounce N Drop - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
 
-  <body style="background-image: 'swirl.png'">
+<body>
+  <!-- Energy particles -->
+  <div class="energy-particle particle-1"></div>
+  <div class="energy-particle particle-2"></div>
+  <div class="energy-particle particle-3"></div>
+  <div class="energy-particle particle-4"></div>
+  <div class="energy-particle particle-5"></div>
+
+  <!-- Banner -->
   <div class="banner">
-    <img src="logo.jpg" height="240px" class="logo">
-  </div>
-    
- <div class="navbar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="event-calendar.html">Event Calendar</a>
+    <div class="css-logo">
+      <div class="logo-circle">
+        <div class="logo-text-main">LRC</div>
+        <div class="logo-flow-line"></div>
+        <div class="logo-text-sub">in motion</div>
+      </div>
+    </div>
   </div>
 
-    <h1>Bounce N Drop-</h1>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="classes.html">Classes</a>
+  </nav>
 
-  </body>
+  <!-- Hero Section -->
+  <section class="hero container fade-in">
+    <div class="hero-content">
+      <h1>Bounce N Drop</h1>
+      <p>High impact dance fitness that gets your heart pumping and your body moving! Not just about physically getting fit — it's also about connecting, socialising and boosting confidence.</p>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <div class="container fade-in section-image-wrap">
+    <video autoplay loop muted playsinline class="section-image--wide" style="border-radius: 24px;">
+      <source src="pics/bounce_n_drop_clip.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="star-divider"></div>
+
+  <!-- Image -->
+  <div class="container fade-in section-image-wrap">
+    <img src="pics/bounce_n_drop.jpg" alt="Lisa - Bounce N Drop dance fitness" class="section-image">
+  </div>
+
+  <div class="star-divider"></div>
+
+  <!-- About the Program -->
+  <div class="container fade-in">
+    <div class="benefits-container">
+      <h2>About the Class</h2>
+
+      <p class="centered-text">
+        Bounce N Drop is a high energy dance fitness class designed to challenge your body while lifting your spirit. Set to pumping music across a range of genres, each session is a full-body workout disguised as a dance party.
+      </p>
+
+      <p class="centered-text">
+        Lisa's programs are not just about physically getting fit — they are also about connecting, socialising and boosting confidence. After all, dancing with joy is infectious!
+      </p>
+
+      <div class="benefit-item">
+        <strong>Intensity:</strong> High impact — prepare to sweat!
+      </div>
+
+      <div class="benefit-item">
+        <strong>Suitable for:</strong> All fitness levels — moves can be modified to suit your body
+      </div>
+
+      <div class="benefit-item">
+        <strong>Location:</strong> Sunshine Coast & Hinterland, QLD
+      </div>
+    </div>
+  </div>
+
+  <div class="star-divider"></div>
+
+  <!-- Benefits -->
+  <div class="container fade-in">
+    <div class="benefits-container">
+      <h2>Benefits of Dance Fitness</h2>
+
+      <div class="benefit-item">
+        <strong>Physical:</strong> Maintain muscle strength, endurance and flexibility. Improved condition of heart and lungs
+      </div>
+
+      <div class="benefit-item">
+        <strong>Cognitive:</strong> Neuroplasticity, significant improvement in memory, attention and body balance
+      </div>
+
+      <div class="benefit-item">
+        <strong>Emotional:</strong> Lifts mood, improves self esteem and confidence, gain dignity and empowerment
+      </div>
+
+      <div class="benefit-item">
+        <strong>Social:</strong> Develops relationships, keeps us connected and part of community
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <section class="cta container fade-in">
+    <div class="bamboo-accent"></div>
+    <h2>Ready to Bounce?</h2>
+    <p>Contact Lisa to find out about upcoming Bounce N Drop sessions.</p>
+    <a href="contact.html" class="email">
+      Get in Touch
+    </a>
+    <div class="bamboo-accent"></div>
+  </section>
+
+  <!-- Breathing Space -->
+  <div class="meditation-space fade-in">
+    <div class="breath-circle"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in').forEach((el, index) => {
+        setTimeout(() => {
+          el.style.transitionDelay = `${index * 0.1}s`;
+        }, 100);
+      });
+    }, 100);
+
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="footer-logo">LRC</span>
+        <span class="footer-tagline">in motion</span>
+      </div>
+      <nav class="site-footer__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 LRC in Motion. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
 </html>

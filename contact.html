@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Lisa Raquel Cowan for qigong classes, dance fitness, private sessions, and wellness enquiries on the Sunshine Coast, QLD.">
+  <meta property="og:title" content="Contact - LRC in Motion">
+  <meta property="og:description" content="Get in touch with Lisa Raquel Cowan for qigong classes, dance fitness, private sessions, and wellness enquiries on the Sunshine Coast, QLD.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrcinmotion.github.io/contact.html">
+  <meta property="og:image" content="https://lrcinmotion.github.io/pics/IMG_2025.jpg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
   <title>Contact - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
@@ -50,15 +56,15 @@
   </section>
 
 <!-- Two Column Section -->
-<div style="display: flex; align-items: center; gap: 2rem; max-width: 1200px; margin: 3rem auto; padding: 0 1rem; flex-wrap: wrap;">
+<div class="two-col-layout">
 
   <!-- Left Column: Image -->
-  <div style="flex: 1; min-width: 300px;">
-    <img src="IMG_2025.jpg" alt="Lisa at Baroon Pocket Dam" style="width: 100%; height: auto; border-radius: 8px;">
+  <div class="two-col-layout__col">
+    <img src="pics/IMG_2025.jpg" alt="Lisa at Baroon Pocket Dam" class="two-col-layout__img">
   </div>
 
   <!-- Right Column: Contact Form -->
-  <div style="flex: 1; min-width: 300px;">
+  <div class="two-col-layout__col">
     <div class="ml-embedded" data-form="MSEcDh"></div>
   </div>
 
@@ -87,7 +93,7 @@
         <div class="contact-icon">📱</div>
         <h3>Mobile</h3>
         <a href="tel:0490539970" class="contact-link">
-          04905 399 70
+          0490 539 970
         </a>
       </div>
 
@@ -156,7 +162,7 @@
     setTimeout(() => {
       document.querySelectorAll('.fade-in').forEach((el, index) => {
         setTimeout(() => {
-          el.style.transitionDelay = `${index * 0.2}s`;
+          el.style.transitionDelay = `${index * 0.1}s`;
         }, 100);
       });
     }, 100);
@@ -170,5 +176,34 @@
     ml('account', '2111263');
 </script>
 <!-- End MailerLite Universal -->
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="footer-logo">LRC</span>
+        <span class="footer-tagline">in motion</span>
+      </div>
+      <nav class="site-footer__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 LRC in Motion. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

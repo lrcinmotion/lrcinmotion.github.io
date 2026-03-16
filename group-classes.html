@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join gentle qigong group classes in Maleny, QLD with Lisa. Part of the Healthy Sunshine Coast Program. Improve balance, reduce stress, and build strength.">
+  <meta property="og:title" content="Group Classes - LRC in Motion">
+  <meta property="og:description" content="Join gentle qigong group classes in Maleny, QLD with Lisa. Part of the Healthy Sunshine Coast Program. Improve balance, reduce stress, and build strength.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrcinmotion.github.io/group-classes.html">
+  <meta property="og:image" content="https://lrcinmotion.github.io/pics/Lisa_Woodford_24-25-45.jpg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
   <title>Group Classes - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
@@ -45,7 +51,7 @@
       <p>
         Join a group session for a shared experience of movement, connection, and transformation.
       </p>
-      <a style="float: none" target="_blank" href="https://qigongwithlisa.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Qigong with Lisa using Setmore" /></a>
+      <a class="book-now-btn" target="_blank" href="https://qigongwithlisa.setmore.com"><img src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Qigong with Lisa using Setmore" /></a>
     </div>      
   </section>
 
@@ -80,28 +86,10 @@
          Complete a one-time Registration Form to join Healthy Sunshine Coast - it's free to join!
         </div>
         <!-- Centered JOIN HERE Button -->
-        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem 0;">
-            <a href="https://our.sunshinecoast.qld.gov.au/LP=356" target="_blank"
-               style="display: inline-block; padding: 16px 40px; 
-                      background-color: #40E0D0; 
-                      color: white; 
-                      text-decoration: none; 
-                      border-radius: 8px; 
-                      font-weight: bold; 
-                      font-size: 20px; 
-                      text-align: center;
-                      transition: all 0.3s ease;
-                      box-shadow: 0 4px 12px rgba(64, 224, 208, 0.3);">
+        <div class="signup-cta">
+            <a href="https://our.sunshinecoast.qld.gov.au/LP=356" target="_blank" class="signup-btn">
                 JOIN HERE
             </a>
-            
-            <style>
-                a[href="https://our.sunshinecoast.qld.gov.au/LP=356"]:hover {
-                    background-color: #20B2AA;
-                    transform: translateY(-2px);
-                    box-shadow: 0 6px 15px rgba(64, 224, 208, 0.4);
-                }
-            </style>
         </div>
         <!-- End Button -->
         
@@ -113,10 +101,10 @@
 
  <div class="benefit-item">
     <!-- Image -->
-    <div class="container fade-in" style="margin: 3rem auto; text-align: center;">
-        <img src="https://raw.githubusercontent.com/lrcinmotion/lrcinmotion.github.io/main/Lisa_Woodford_24-25-45.jpg" 
+    <div class="container fade-in section-image-wrap">
+        <img src="pics/Lisa_Woodford_24-25-45.jpg"
              alt="Lisa Woodford"
-             style="width: 100%; max-width: 800px; height: auto;">
+             class="section-image--wide">
     </div>
 </div>
 
@@ -150,11 +138,37 @@
     setTimeout(() => {
       document.querySelectorAll('.fade-in').forEach((el, index) => {
         setTimeout(() => {
-          el.style.transitionDelay = `${index * 0.2}s`;
+          el.style.transitionDelay = `${index * 0.1}s`;
         }, 100);
       });
     }, 100);
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="footer-logo">LRC</span>
+        <span class="footer-tagline">in motion</span>
+      </div>
+      <nav class="site-footer__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 LRC in Motion. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

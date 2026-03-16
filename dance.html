@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dance fitness programs with LRC in Motion on the Sunshine Coast. From high-impact Bounce N Drop to seated Elevate classes and free community dance events.">
+  <meta property="og:title" content="Dance - LRC in Motion">
+  <meta property="og:description" content="Dance fitness programs with LRC in Motion on the Sunshine Coast. From high-impact Bounce N Drop to seated Elevate classes and free community dance events.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrcinmotion.github.io/dance.html">
+  <meta property="og:image" content="https://lrcinmotion.github.io/pics/me.jpeg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
   <title>Dance - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
@@ -51,11 +57,11 @@
 
       <h2>Dance Fitness Programs</h2>
 
-      <p style="text-align: center; max-width: 800px; margin: 2rem auto;">
+      <p class="centered-text">
         All levels. From high intensity to lower impact sessions, there is a class for everyone!
       </p>
 
-      <p style="text-align: center; max-width: 800px; margin: 2rem auto;">
+      <p class="centered-text">
         Lisa's programs are not JUST about physically getting fit; they are ALSO about
         connecting, socialising and boosting confidence.
       </p>
@@ -72,7 +78,7 @@
 
       <!-- Bounce N Drop -->
       <a href="bounce_n_drop.html" class="feature-card">
-        <img src="bounce_n_drop.jpg" alt="Bounce N Drop" class="feature-image">
+        <img src="pics/bounce_n_drop.jpg" alt="Bounce N Drop" class="feature-image">
         <div class="feature-content">
           <h3>Bounce N Drop</h3>
           <p>High Impact Dance Fitness</p>
@@ -81,7 +87,7 @@
 
       <!-- Elevate -->
       <a href="elevate.html" class="feature-card">
-        <img src="elevate.jpg" alt="Elevate" class="feature-image">
+        <img src="pics/elevate.jpg" alt="Elevate" class="feature-image">
         <div class="feature-content">
           <h3>Elevate</h3>
           <p>Seated Dance Program</p>
@@ -90,7 +96,7 @@
 
       <!-- Community Dance -->
       <a href="community_dance.html" class="feature-card">
-        <img src="community_dance.jpg" alt="Community Dance" class="feature-image">
+        <img src="pics/community_dance.jpg" alt="Community Dance" class="feature-image">
         <div class="feature-content">
           <h3>Community Dance</h3>
           <p>Participatory Dance and Movement Practices</p>
@@ -144,11 +150,37 @@
     setTimeout(() => {
       document.querySelectorAll('.fade-in').forEach((el, index) => {
         setTimeout(() => {
-          el.style.transitionDelay = `${index * 0.2}s`;
+          el.style.transitionDelay = `${index * 0.1}s`;
         }, 100);
       });
     }, 100);
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="footer-logo">LRC</span>
+        <span class="footer-tagline">in motion</span>
+      </div>
+      <nav class="site-footer__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 LRC in Motion. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

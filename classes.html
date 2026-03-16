@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore qigong, dance fitness, and holistic movement classes with LRC in Motion. Group sessions, online courses, private tuition, and workshops available.">
+  <meta property="og:title" content="Classes - LRC in Motion">
+  <meta property="og:description" content="Explore qigong, dance fitness, and holistic movement classes with LRC in Motion. Group sessions, online courses, private tuition, and workshops available.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrcinmotion.github.io/classes.html">
+  <meta property="og:image" content="https://lrcinmotion.github.io/pics/Lisa%20Qigong%202.jpg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
   <title>Classes - LRC in Motion</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
@@ -58,7 +64,7 @@
 
       <!-- Group Classes -->
       <a href="group-classes.html" class="feature-card">
-        <img src="Lisa_Woodford_24-25-45.jpg" alt="Group Classes" class="feature-image">
+        <img src="pics/Lisa_Woodford_24-25-45.jpg" alt="Group Classes" class="feature-image">
         <div class="feature-content">
           <h3>Group Classes</h3>
           <p>Experience holistic movement in a group class setting.</p>
@@ -67,7 +73,7 @@
 
       <!-- Online Courses -->
       <a href="online-courses.html" class="feature-card">
-        <img src="stomach_spleen.jpg" alt="Online Courses" class="feature-image">
+        <img src="pics/stomach_spleen.jpg" alt="Online Courses" class="feature-image">
         <div class="feature-content">
           <h3>Online Courses</h3>
           <p>Learn from anywhere with accessible online movement courses.</p>
@@ -76,7 +82,7 @@
 
       <!-- Private Tuition -->
       <a href="private-tuition.html" class="feature-card">
-        <img src="private_instruct.jpg" alt="Private Tuition" class="feature-image">
+        <img src="pics/private_instruct.jpg" alt="Private Tuition" class="feature-image">
         <div class="feature-content">
           <h3>Private Tuition</h3>
           <p>Personalized one-on-one sessions tailored to your unique movement journey.</p>
@@ -85,7 +91,7 @@
 
       <!-- Workshops and Events -->
       <a href="workshops-events.html" class="feature-card">
-        <img src="mullum_workshop.jpg" alt="Workshops and Events" class="feature-image">
+        <img src="pics/mullum_workshop.jpg" alt="Workshops and Events" class="feature-image">
         <div class="feature-content">
           <h3>Workshops and Events</h3>
           <p>Join special workshops, retreats, and events at beautiful locations.</p>
@@ -128,11 +134,37 @@
     setTimeout(() => {
       document.querySelectorAll('.fade-in').forEach((el, index) => {
         setTimeout(() => {
-          el.style.transitionDelay = `${index * 0.2}s`;
+          el.style.transitionDelay = `${index * 0.1}s`;
         }, 100);
       });
     }, 100);
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="footer-logo">LRC</span>
+        <span class="footer-tagline">in motion</span>
+      </div>
+      <nav class="site-footer__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 LRC in Motion. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LRC in Motion offers qigong and dance movement classes on the Sunshine Coast, QLD. Join Lisa Raquel Cowan for transformative wellness experiences.">
+  <meta property="og:title" content="LRC in Motion - Movement & Wellness">
+  <meta property="og:description" content="LRC in Motion offers qigong and dance movement classes on the Sunshine Coast, QLD. Join Lisa Raquel Cowan for transformative wellness experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrcinmotion.github.io/index.html">
+  <meta property="og:image" content="https://lrcinmotion.github.io/pics/Lisa_Woodford_24-25-45.jpg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Abril+Fatface&display=swap" rel="stylesheet">
   <title>LRC in Motion - Movement & Wellness</title>
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
@@ -38,7 +44,15 @@
     <a href="classes.html">Classes</a>
   </nav>
 
- 
+  <!-- Homepage Hero -->
+  <section class="homepage-hero">
+    <div class="homepage-hero__overlay"></div>
+    <div class="homepage-hero__content">
+      <h1>LRC in Motion</h1>
+      <p>Movement, wellness, and connection through the transformative power of Qigong and dance.</p>
+      <a href="classes.html" class="btn-primary">Explore Classes</a>
+    </div>
+  </section>
 
   <!-- Yin Yang Divider -->
   <div class="yin-yang-divider"></div>
@@ -48,10 +62,10 @@
     <div class="feature-grid fade-in">
       <!-- Qigong Card -->
       <a href="qigong.html" class="feature-card">
-        <img src="Lisa Qigong 2.jpg" alt="Qigong Practice" class="feature-image">
+        <img src="pics/Lisa Qigong 2.jpg" alt="Qigong Practice" class="feature-image">
         <div class="feature-content">
           <h3>Qigong with Lisa </h3>
-          
+
           <p>
             Ancient Chinese practice integrating movement, meditation, and breath
             to cultivate energy and wellness.
@@ -61,7 +75,7 @@
 
       <!-- Dance Card -->
       <a href="dance.html" class="feature-card">
-        <img src="me.jpeg" alt="Dance Movement" class="feature-image">
+        <img src="pics/me.jpeg" alt="Dance Movement" class="feature-image">
         <div class="feature-content">
           <h3>Dance</h3>
           <p>
@@ -72,10 +86,11 @@
       </a>
     </div>
   </div>
- <!-- Hero Section -->
+
+  <!-- Mission Section -->
   <section class="hero container fade-in">
     <div class="hero-content">
-      <h1>LRC in Motion</h1>
+      <h3>MISSION</h3>
       <p>
         An initiative that thrives on creating positive impacts, fostering connections
         and uniting people through the transformative power of movement.
@@ -83,27 +98,16 @@
 
       <div class="bamboo-accent"></div>
 
-      
-    </div>
-  </section>
-  <!-- Yin Yang Divider -->
-  <div class="yin-yang-divider"></div>
- 
-  <!-- Hero Section -->
-  <section class="hero container fade-in">
-    <div class="hero-content">
-      <h3>MISSION</h3>
       <p>
         Drawing on the many facets of holistic movement, the aim is to build connection,
         to create, to include and inspire an overall sense of wellbeing and fulfillment.
       </p>
-
-      <div class="bamboo-accent"></div>
-
-     </div>
+    </div>
   </section>
-  
-  
+
+  <!-- Yin Yang Divider -->
+  <div class="yin-yang-divider"></div>
+
   <!-- Call to Action -->
   <section class="cta container fade-in">
     <div class="bamboo-accent"></div>
@@ -119,6 +123,23 @@
   <div class="meditation-space">
     <div class="breath-circle"></div>
   </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="footer-logo">LRC</span>
+        <span class="footer-tagline">in motion</span>
+      </div>
+      <nav class="site-footer__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 LRC in Motion. All rights reserved.</p>
+    </div>
+  </footer>
 
   <!-- JavaScript -->
   <script>
@@ -145,10 +166,20 @@
     setTimeout(() => {
       document.querySelectorAll('.fade-in').forEach((el, index) => {
         setTimeout(() => {
-          el.style.transitionDelay = `${index * 0.2}s`;
+          el.style.transitionDelay = `${index * 0.1}s`;
         }, 100);
       });
     }, 100);
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>
 
 </body>
