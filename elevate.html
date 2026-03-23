@@ -96,23 +96,20 @@
     </div>
   </div>
 
-   
-<!-- Fixed Call to Action -->
+<!-- Direct Elevate Inquiry -->
 <section class="cta container fade-in" style="text-align: center; padding: 40px 20px;">
   <div class="bamboo-accent"></div>
-  <h2>Join an Elevate Class</h2>
-  <p>Select your interests to find out about upcoming sessions.</p>
+  <h2>Interested in Elevate?</h2>
+  <p>Drop your email below and I'll send the session details and workshop opportunities straight to your inbox.</p>
   
-  <button id="inquiry-toggle" type="button" class="bamboo-button" style="cursor: pointer; padding: 12px 30px; background-color: #2D5A27; color: white; border: none; border-radius: 5px; font-size: 1.1em; transition: 0.3s;">
-    Get in Touch
+  <button id="elevate-direct-toggle" type="button" class="bamboo-button" style="cursor: pointer; padding: 12px 30px; background-color: #2D5A27; color: white; border: none; border-radius: 5px; font-size: 1.1em;">
+    Get the Details
   </button>
 
-  <div id="inquiry-form-container" style="max-height: 0; overflow: hidden; transition: all 0.5s ease-in-out; background: rgba(255,255,255,0.8); border-radius: 8px; margin: 0 auto; width: 100%; max-width: 500px;">
-    <div style="padding: 20px; text-align: left;">
-      <p style="font-style: italic; color: #2D5A27; margin-bottom: 15px; text-align: center;">Which sessions are you interested in?</p>
-      
-      <!-- YOUR MAILERLITE EMBED CODE HERE -->
-      <div class="ml-embedded" data-form="0ygV2t"></div>
+  <div id="elevate-form-box" style="max-height: 0; overflow: hidden; transition: all 0.5s ease-in-out; max-width: 400px; margin: 0 auto;">
+    <div style="padding: 20px;">
+      <!-- PASTE THE NEW 'ELEVATE-ONLY' MAILERLITE EMBED CODE HERE -->
+     <div class="ml-embedded" data-form="WkiRsl"></div>
     </div>
   </div>
 
@@ -120,27 +117,23 @@
 </section>
 
 <script>
-  // Wrap in a function to ensure the button exists before running
   window.onload = function() {
-    var toggleBtn = document.getElementById('inquiry-toggle');
-    var formBox = document.getElementById('inquiry-form-container');
-
-    if (toggleBtn && formBox) {
-      toggleBtn.onclick = function() {
-        // Use strictly triple-equals === for comparison to avoid the 'left-hand side' error
-        if (formBox.style.maxHeight === '0px' || formBox.style.maxHeight === '') {
-          formBox.style.maxHeight = '1000px'; 
-          toggleBtn.textContent = 'Close Form';
-          toggleBtn.style.backgroundColor = '#666';
+    var btn = document.getElementById('elevate-direct-toggle');
+    var box = document.getElementById('elevate-form-box');
+    if(btn && box) {
+      btn.onclick = function() {
+        if (box.style.maxHeight === '0px' || box.style.maxHeight === '') {
+          box.style.maxHeight = '300px'; 
+          btn.textContent = 'Close';
         } else {
-          formBox.style.maxHeight = '0px';
-          toggleBtn.textContent = 'Get in Touch';
-          toggleBtn.style.backgroundColor = '#2D5A27';
+          box.style.maxHeight = '0px';
+          btn.textContent = 'Get the Details';
         }
       };
     }
   };
 </script>
+
 
   <!-- Yin Yang Divider -->
   <div class="yin-yang-divider"></div>
