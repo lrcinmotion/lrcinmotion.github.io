@@ -156,6 +156,85 @@
     </div>
   </div>
 
+  <!-- Updated Call to Action -->
+<section class="cta container fade-in">
+  <div class="bamboo-accent"></div>
+  <h2>Join an Elevate Class</h2>
+  <p>Contact Lisa to find out about upcoming sessions in your area.</p>
+  
+  <!-- The Toggle Button -->
+  <button id="inquiry-toggle" class="email button-style" style="cursor: pointer; border: none; font: inherit;">
+    Get in Touch
+  </button>
+
+  <!-- The Expanding Container -->
+  <div id="inquiry-form-container" class="expanding-form">
+    <p class="interest-prompt">Select your interests below:</p>
+    
+    <!-- PASTE YOUR MAILERLITE EMBED CODE HERE -->
+    <div class="ml-embedded" data-form="YOUR_FORM_ID"></div>
+  </div>
+
+  <div class="bamboo-accent"></div>
+</section>
+
+<style>
+  /* 1. Control the expansion animation */
+  .expanding-form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    margin-top: 0;
+  }
+
+  /* 2. Style the prompt text to match your typography */
+  .interest-prompt {
+    font-size: 0.95em;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #4a4a4a; /* Adjust to match your bamboo text color */
+  }
+
+  /* 3. Force MailerLite styles to match your theme */
+  /* This targets the checkboxes and labels inside the ML form */
+  .ml-embedded .maillite-form .ml-form-embedBody .ml-form-checkboxRow {
+    text-align: left !important;
+    margin-bottom: 10px !important;
+    font-family: inherit !important;
+  }
+
+  /* Adjusting the look of the actual checkbox labels */
+  .ml-embedded .ml-form-checkboxRow label {
+    font-weight: 500 !important;
+    color: #333 !important;
+    cursor: pointer;
+  }
+
+  /* Remove extra padding MailerLite adds so it fits tight in the CTA */
+  .ml-form-embedWrapper {
+    padding: 0 !important;
+  }
+</style>
+
+<script>
+  document.getElementById('inquiry-toggle').addEventListener('click', function() {
+    var container = document.getElementById('inquiry-form-container');
+    var button = this;
+    
+    // Check if it's currently closed
+    if (container.style.max-height === '0px' || container.style.max-height === '') {
+      container.style.max-height = '800px'; // Plenty of room for the form
+      button.textContent = 'Close Form';
+      container.style.marginTop = '20px';
+    } else {
+      container.style.max-height = '0px';
+      button.textContent = 'Get in Touch';
+      container.style.marginTop = '0px';
+    }
+  });
+</script>
+
+  
   <!-- Call to Action -->
   <section class="cta container fade-in">
     <div class="bamboo-accent"></div>
