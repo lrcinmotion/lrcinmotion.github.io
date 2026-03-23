@@ -83,44 +83,38 @@
 </section>
 
 <script>
-  // --- PART 1: YOUR PREFERRED FADE-IN & STAGGER LOGIC ---
-  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -100px 0px' };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  setTimeout(() => {
-    document.querySelectorAll('.fade-in').forEach((el, index) => {
-      el.style.transitionDelay = `${index * 0.1}s`;
-    });
-  }, 100);
-
-  // --- PART 2: THE EXPANDING FORM TOGGLE ---
-  // We use a specific listener so it doesn't wait for the whole window to load
+  // --- UNIVERSAL TOGGLE FOR ALL PAGES ---
   document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.getElementById('elevate-direct-toggle');
-    var box = document.getElementById('elevate-form-box');
     
-    if(btn && box) {
-      btn.onclick = function() {
-        if (box.style.maxHeight === '0px' || box.style.maxHeight === '') {
-          box.style.maxHeight = '500px'; 
-          btn.textContent = 'Close';
-          btn.style.backgroundColor = '#666'; 
-        } else {
-          box.style.maxHeight = '0px';
-          btn.textContent = 'Get the Details';
-          btn.style.backgroundColor = '#119788'; 
-        }
-      };
-    }
+    // This helper function handles the opening/closing for any button
+    const setupToggle = (btnId, boxId, closedText) => {
+      var btn = document.getElementById(btnId);
+      var box = document.getElementById(boxId);
+      
+      if(btn && box) {
+        btn.onclick = function() {
+          // Check if currently closed
+          if (box.style.maxHeight === '0px' || box.style.maxHeight === '') {
+            box.style.maxHeight = '1000px'; // Open it
+            btn.textContent = 'Close';
+            btn.style.backgroundColor = '#666'; 
+          } else {
+            box.style.maxHeight = '0px'; // Close it
+            btn.textContent = closedText;
+            btn.style.backgroundColor = '#119788'; 
+          }
+        };
+      }
+    };
+
+    // This part tells the script which buttons to look for on the current page
+    setupToggle('elevate-direct-toggle', 'elevate-form-box', 'Get the Details');
+    setupToggle('bounce-direct-toggle', 'bounce-form-box', 'Get Session Info');
+    setupToggle('community-direct-toggle', 'community-form-box', 'Get the Details');
+    setupToggle('inquiry-toggle', 'inquiry-form-container', 'Get in Touch');
   });
 
-  // --- PART 3: YOUR NAVBAR SCROLL EFFECT ---
+  // --- NAVBAR SCROLL EFFECT ---
   const navbar = document.querySelector('.navbar');
   if(navbar) {
     window.addEventListener('scroll', () => { 
@@ -129,6 +123,7 @@
     });
   }
 </script>
+
 
   
   <!-- Image -->
