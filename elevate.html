@@ -53,33 +53,36 @@
     <a href="classes.html">Classes</a>
   </nav>
 
- <!-- Combined Hero & Inquiry Section -->
-<section class="hero container fade-in" style="text-align: center; padding-bottom: 30px;">
+<!-- Combined Hero & Inquiry Section (Original Style Restored) -->
+<section class="hero container fade-in" style="text-align: center; padding-bottom: 0;">
   <div class="hero-content">
     <h1>Elevate</h1>
     <p style="margin-bottom: 25px;">A low impact seated dance exercise program for senior citizens. Enjoyable, uplifting and informative — set to a combination of great relatable tunes!</p>
 
-    <!-- The Integrated Inquiry Content -->
-    <div class="bamboo-accent" style="margin: 0 auto 15px;"></div>
-    
-    <h2 style="margin-top: 0; font-size: 1.5rem; color: #2D5A27;">Interested in Elevate?</h2>
-    <p style="margin-bottom: 15px;">Drop your email below and I'll send the session details straight to your inbox.</p>
-    
-    <button id="elevate-direct-toggle" type="button" class="email" style="cursor: pointer; border: none; background-color: #119788; color: white; transition: 0.3s; display: inline-block; padding: 12px 30px; border-radius: 5px; font-size: 1.1em;">
-      Get the Details
-    </button>
+    <!-- This div acts as the bridge to the Inquiry content without the section gap -->
+    <div class="cta" style="padding: 10px 0; margin-top: 0; background: transparent; border: none; box-shadow: none;">
+      <div class="bamboo-accent" style="margin: 0 auto 15px;"></div>
+      
+      <h2>Interested in Elevate?</h2>
+      <p style="margin-bottom: 20px;">Drop your email below and I'll send the session details straight to your inbox.</p>
+      
+      <!-- Using only 'email' class to get your exact rounded styling -->
+      <button id="elevate-direct-toggle" type="button" class="email" style="cursor: pointer; border: none; background-color: #119788; color: white; display: inline-block;">
+        Get the Details
+      </button>
 
-    <!-- Expanding Form Box -->
-    <div id="elevate-form-box" style="max-height: 0; overflow: hidden; transition: all 0.5s ease-in-out; max-width: 450px; margin: 0 auto;">
-      <div style="padding: 20px;">
-        <!-- MailerLite Embed -->
-        <div class="ml-embedded" data-form="WkiRsl"></div>
+      <!-- Expanding Form Box -->
+      <div id="elevate-form-box" style="max-height: 0; overflow: hidden; transition: all 0.5s ease-in-out; max-width: 450px; margin: 0 auto;">
+        <div style="padding: 20px;">
+          <div class="ml-embedded" data-form="WkiRsl"></div>
+        </div>
       </div>
-    </div>
 
-    <div class="bamboo-accent" style="margin: 20px auto 0;"></div>
+      <div class="bamboo-accent" style="margin: 20px auto 0;"></div>
+    </div>
   </div>
 </section>
+
 
 
   <div class="bamboo-accent" style="margin-top: 20px;"></div>
