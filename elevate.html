@@ -82,24 +82,30 @@
   <div class="bamboo-accent" style="margin-top: 20px;"></div>
 </section>
 
-<script>
-  // --- UNIVERSAL TOGGLE FOR ALL PAGES ---
+  <script>
   document.addEventListener('DOMContentLoaded', function() {
     
-    // This helper function handles the opening/closing for any button
+    // --- STEP 1: FORCE CONTENT VISIBLE ---
+    // This replaces the broken logic and makes your page appear immediately
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.opacity = "1";
+      el.style.visibility = "visible";
+      el.style.transform = "none"; // Clears any 'slide-up' shifts
+    });
+
+    // --- STEP 2: UNIVERSAL TOGGLE FOR ALL PAGES ---
     const setupToggle = (btnId, boxId, closedText) => {
       var btn = document.getElementById(btnId);
       var box = document.getElementById(boxId);
       
       if(btn && box) {
         btn.onclick = function() {
-          // Check if currently closed
           if (box.style.maxHeight === '0px' || box.style.maxHeight === '') {
-            box.style.maxHeight = '1000px'; // Open it
+            box.style.maxHeight = '1000px'; 
             btn.textContent = 'Close';
             btn.style.backgroundColor = '#666'; 
           } else {
-            box.style.maxHeight = '0px'; // Close it
+            box.style.maxHeight = '0px';
             btn.textContent = closedText;
             btn.style.backgroundColor = '#119788'; 
           }
@@ -107,14 +113,14 @@
       }
     };
 
-    // This part tells the script which buttons to look for on the current page
+    // Initialize all buttons (works on index, elevate, dance, etc.)
     setupToggle('elevate-direct-toggle', 'elevate-form-box', 'Get the Details');
     setupToggle('bounce-direct-toggle', 'bounce-form-box', 'Get Session Info');
     setupToggle('community-direct-toggle', 'community-form-box', 'Get the Details');
     setupToggle('inquiry-toggle', 'inquiry-form-container', 'Get in Touch');
   });
 
-  // --- NAVBAR SCROLL EFFECT ---
+  // --- STEP 3: NAVBAR SCROLL EFFECT ---
   const navbar = document.querySelector('.navbar');
   if(navbar) {
     window.addEventListener('scroll', () => { 
@@ -123,6 +129,7 @@
     });
   }
 </script>
+
 
 
   
