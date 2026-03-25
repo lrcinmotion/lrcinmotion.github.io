@@ -10,6 +10,15 @@
     ml('account', '2111263');
 </script>
 <!-- End MailerLite Universal -->
+  <!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2111263');
+</script>
+<!-- End MailerLite Universal -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Free community dance events on the Sunshine Coast with LRC in Motion. All abilities welcome for fun, inclusive participatory dance and movement sessions.">
@@ -65,6 +74,74 @@
   <div class="container fade-in section-image-wrap">
     <img src="pics/community_dance.jpg" alt="Community Dance event" class="section-image--wide">
   </div>
+
+<!-- Community Dance Inquiry -->
+<section class="cta container fade-in" style="text-align: center; padding: 40px 20px;">
+  <div class="bamboo-accent"></div>
+  <h2>Join Community Dance</h2>
+  <p>Drop your email below and I'll send you the latest community session info.</p>
+  
+  <button id="community-direct-toggle" type="button" class="email" style="cursor: pointer; border: none; background-color: #119788; transition: 0.3s; display: inline-block;">
+    Get the Details
+  </button>
+
+  <div id="community-form-box" style="max-height: 0; overflow: hidden; transition: all 0.5s ease-in-out; max-width: 400px; margin: 0 auto;">
+    <div style="padding: 20px;">
+      <!-- PASTE YOUR COMMUNITY DANCE MAILERLITE FORM ID HERE -->
+     <div class="ml-embedded" data-form="dgFuhZ"></div>
+    </div>
+  </div>
+  <div class="bamboo-accent" style="margin-top: 20px;"></div>
+</section>
+
+<script>
+  // PART 1: FADE-IN & STAGGER LOGIC
+  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -100px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in').forEach((el, index) => {
+      el.style.transitionDelay = `${index * 0.1}s`;
+    });
+  }, 100);
+
+  // PART 2: EXPANDING FORM TOGGLE
+  document.addEventListener('DOMContentLoaded', function() {
+    var cBtn = document.getElementById('community-direct-toggle');
+    var cBox = document.getElementById('community-form-box');
+    
+    if(cBtn && cBox) {
+      cBtn.onclick = function() {
+        if (cBox.style.maxHeight === '0px' || cBox.style.maxHeight === '') {
+          cBox.style.maxHeight = '500px'; 
+          cBtn.textContent = 'Close';
+          cBtn.style.backgroundColor = '#666'; 
+        } else {
+          cBox.style.maxHeight = '0px';
+          cBtn.textContent = 'Get the Details';
+          cBtn.style.backgroundColor = '#119788'; 
+        }
+      };
+    }
+  });
+
+  // PART 3: NAVBAR SCROLL EFFECT
+  const navbar = document.querySelector('.navbar');
+  if(navbar) {
+    window.addEventListener('scroll', () => { 
+      if (window.scrollY > 50) { navbar.classList.add('scrolled'); } 
+      else { navbar.classList.remove('scrolled'); }
+    });
+  }
+</script>
+
+
 
   <!-- Yin Yang Divider -->
   <div class="yin-yang-divider"></div>
